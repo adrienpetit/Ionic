@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     Nouveau film
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Titre</ion-label>
+    <ion-input [(ngModel)]="newfilm.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Réalisateur</ion-label>
+    <ion-input [(ngModel)]="newfilm.realisateur"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Résumé</ion-label>
+    <ion-input [(ngModel)]="newfilm.resume"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Image</ion-label>
+    <ion-input [(ngModel)]="newfilm.image"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Lien Youtube</ion-label>
+    <ion-input [(ngModel)]="newfilm.link"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Catégorie</ion-label>
+    <ion-select [(ngModel)]="newfilm.category">
+      <ion-select-option *ngFor="let category of categorys" [value]="category">
+        {{ category.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>     
+
+    <ion-button color="success" (click)="create()">Créer</ion-button>
+
+    <ion-button color="danger" [routerLink]="['/films']">Annuler</ion-button>
+
+</ion-content>

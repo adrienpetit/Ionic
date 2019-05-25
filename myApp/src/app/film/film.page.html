@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+       {{ film.title }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div>
+      <h3>{{ film.title }}</h3>
+      <h5>Réalisé par : {{ film.realisateur }}</h5>
+      <h6>Catégorie : {{ film.category.name }}</h6>
+    </div>       
+    <img src="assets/img/{{film.image}}.jpg" width="500" height="215">
+        
+    <div>
+        <p>
+          Résumé : {{film.resume}}
+        </p>
+      </div>
+    
+    <div>
+           Lien de la bande annonce: <a href="film.link">{{film.link}}</a>
+        </div>
+      <br>
+        <div>
+          <ion-button color="primary" size="default" [routerLink]="['/change-film/', film.id]">Modifier</ion-button>
+          <ion-button color="danger" (click)="delete()">Delete</ion-button>
+        </div>
+
+  </ion-content>
